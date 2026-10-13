@@ -60,41 +60,7 @@ Change the estimator or `PARAM_GRID` in that notebook to adjust its hyperparamet
 
 Each model uses a stratified train/test split. All learned imputation, scaling and feature expansion are fitted inside the training CV folds. Tuning selects parameters within that classifier family and refits on training rows only; it never uses the test set for parameter search or early stopping. Reruns overwrite only that classifier's artifact folder and report.
 
-## Files and reports
-
-```text
-classification/
-├── readme.md
-├── notebooks/
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_data_cleaning.ipynb
-│   ├── 03_logistic_regression_classifier.ipynb
-│   ├── 03_knn_classifier.ipynb
-│   ├── 03_naive_bayes_classifier.ipynb
-│   ├── 03_decision_tree_classifier.ipynb
-│   ├── 03_random_forest_classifier.ipynb
-│   ├── 03_support_vector_classifier.ipynb
-│   └── 03_xgboost_classifier.ipynb
-├── customer_purchases_dataset/
-│   ├── customer_details.csv            # unchanged original source
-│   └── cleaned_data.csv                # shared deterministic preparation
-├── artifacts/
-│   ├── common/                         # cleaning metadata, audit and exclusions
-│   └── <classifier_name>/
-│       ├── model.joblib                # classifier with fitted preprocessing
-│       ├── run_metadata.json           # settings, parameters, data hashes and split IDs
-│       ├── training_data.csv
-│       ├── testing_data.csv
-│       ├── performance.csv             # this model's train/test metrics
-│       ├── test_predictions.csv        # classes, continuous scores and error types
-│       ├── classification_report.csv
-│       ├── confusion_matrix.csv
-│       ├── cv_results.csv              # this model's training-CV search or fold scores
-│       └── model_details.csv
-└── reports/
-    └── <classifier_name>.html          # one report for each model run
-```
-
+## Reports on model training and testing
 Reports embed Plotly for offline viewing. Each contains the model explanation, actual fitted hyperparameters, CV results, train/test metrics, per-class scores, misclassified customers, confusion matrix, ROC/precision–recall curves and an age/salary decision-region plot. A bounded 120×120 grid replaces the original extremely large decision-boundary mesh. Decision Tree also displays its learned rules in its notebook without requiring Graphviz.
 
 ## Read one model's performance
