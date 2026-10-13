@@ -49,14 +49,30 @@ The project currently runs locally and covers data analysis, model training, and
 
 ## Quick Start
 
-Download the project, open a terminal in its folder, and install the requirements:
+The included `Makefile` sets up a virtual environment, installs dependencies, and downloads every dataset in one step:
 
 ```bash
-python -m pip install -r requirements.txt
+make setup
+```
+
+This runs, in order:
+
+| Target | What it does |
+|---|---|
+| `make venv` | Creates a `.venv` virtual environment (uses `python3.14`; edit the `PYTHON` variable in the Makefile if you use a different interpreter) |
+| `make install` | Installs everything in `requirements.txt` into `.venv` |
+| `make data` | Downloads all datasets from Google Drive into their project folders and verifies every expected CSV is present |
+
+Run `make install` or `make data` individually if you only need one step, or `make clean` to remove `.venv`.
+
+Once setup finishes, activate the environment and start Jupyter:
+
+```bash
+source .venv/bin/activate
 python -m jupyter notebook
 ```
 
-Open a notebook and choose **Run All**. You can also use VS Code with the same Python environment.
+Open a notebook and choose **Run All**. You can also use VS Code with the same `.venv` Python environment.
 
 ## Run Guide
 
