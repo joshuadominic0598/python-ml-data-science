@@ -1,0 +1,9 @@
+rank_test_score,mean_test_score,std_test_score,params
+1,0.9123809523809523,0.07094119438820076,"{'classifier__max_depth': None, 'classifier__max_features': 'sqrt', 'classifier__min_samples_leaf': 3}"
+1,0.9123809523809523,0.07094119438820076,"{'classifier__max_depth': 5, 'classifier__max_features': 'sqrt', 'classifier__min_samples_leaf': 3}"
+3,0.9023809523809524,0.08173293160558683,"{'classifier__max_depth': 5, 'classifier__max_features': None, 'classifier__min_samples_leaf': 3}"
+4,0.8923809523809524,0.09553999767878678,"{'classifier__max_depth': None, 'classifier__max_features': None, 'classifier__min_samples_leaf': 3}"
+5,0.872857142857143,0.08060991988380503,"{'classifier__max_depth': 5, 'classifier__max_features': 'sqrt', 'classifier__min_samples_leaf': 1}"
+6,0.8633333333333333,0.07311656273397803,"{'classifier__max_depth': 5, 'classifier__max_features': None, 'classifier__min_samples_leaf': 1}"
+7,0.8538095238095238,0.08205965420395435,"{'classifier__max_depth': None, 'classifier__max_features': 'sqrt', 'classifier__min_samples_leaf': 1}"
+7,0.8538095238095238,0.08205965420395435,"{'classifier__max_depth': None, 'classifier__max_features': None, 'classifier__min_samples_leaf': 1}"

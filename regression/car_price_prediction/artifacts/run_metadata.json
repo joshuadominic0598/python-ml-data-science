@@ -1,0 +1,73 @@
+{
+  "format_version": 1,
+  "project": "car_price_prediction",
+  "data_preparation": {
+    "source_rows": 4345,
+    "excluded_invalid_or_missing_prices": 172,
+    "excluded_exact_duplicates": 50,
+    "usable_rows": 4123,
+    "training_rows": 2638,
+    "validation_rows": 660,
+    "ground_truth_rows": 825
+  },
+  "created_at_utc": "2026-10-13T15:53:49.807859+00:00",
+  "config": {
+    "random_state": 42,
+    "ground_truth_fraction": 0.2,
+    "validation_fraction": 0.2,
+    "cv_folds": 5,
+    "models": null,
+    "tune": true,
+    "tune_top_n": 2,
+    "overfit_ratio": 1.5,
+    "underperformance_ratio": 1.25,
+    "reference_year": 2016
+  },
+  "models": [
+    "DummyMedian",
+    "LinearRegression",
+    "DecisionTree",
+    "Ridge",
+    "Lasso",
+    "ElasticNet",
+    "RandomForest",
+    "GradientBoostedTreesModel",
+    "HistogramGradientBoostedTreesModel",
+    "XGBoost",
+    "DecisionTree (tuned)",
+    "RandomForest (tuned)"
+  ],
+  "feature_signature": "17092b987f2f6880062bf75061c8b8d3cc778805606d47b7564141b934b4ef23",
+  "comparison_metric": "rmse",
+  "fit_rows": 2638,
+  "split_rows": {
+    "training": 2638,
+    "validation": 660,
+    "ground_truth": 825
+  },
+  "tuning": [
+    {
+      "model": "DecisionTree (tuned)",
+      "cv_rmse": 12356.048856705089,
+      "parameters": "{\"regressor__model__max_depth\": null, \"regressor__model__min_samples_leaf\": 10}"
+    },
+    {
+      "model": "RandomForest (tuned)",
+      "cv_rmse": 10205.572128380289,
+      "parameters": "{\"regressor__model__min_samples_leaf\": 1}"
+    }
+  ],
+  "file_sha256": {
+    "car_prices_dataset/train/car_price.csv": "86868a3a0be32b40ab710068a3c6af8fab4a9aac7eaf00e5b1701bd1edae74d9",
+    "car_prices_dataset/train/training_data.csv": "ba898dbe09241a6b06589aca2d9ad09580ad4e9e2baa584dd5b0c250865d87d0",
+    "car_prices_dataset/train/validation_data.csv": "0203a02d94905b043564fb4c6391367eae67ac1c2ba988c1b2a12b61e06fcd0a",
+    "car_prices_dataset/ground_truth/ground_truth_features.csv": "62706a65019b1b0745775d6d238e4775e11477dbfec06c1d01be7b92e0f24ae1",
+    "car_prices_dataset/ground_truth/ground_truth.csv": "7631b31f0511118de0a0a7906310e3dcf127c33cae38450792dc1587f145bbdd",
+    "artifacts/model_comparison.csv": "5e2ad3a0ac1004dbfebe09421f9982300880cd2361506e545c601309292894a9",
+    "artifacts/candidates.joblib": "79c734d7421a21c5c9f538c9e79daedaa6586323f1ca2edfedd57da7af5c35de"
+  },
+  "best_observed_models": [
+    "RandomForest (tuned)",
+    "RandomForest"
+  ]
+}

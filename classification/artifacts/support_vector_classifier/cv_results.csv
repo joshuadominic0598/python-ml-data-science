@@ -1,0 +1,10 @@
+rank_test_score,mean_test_score,std_test_score,params
+1,0.931904761904762,0.04897127669402835,"{'classifier__C': 1.0, 'classifier__gamma': 1.0}"
+2,0.9219047619047618,0.058619801937044476,"{'classifier__C': 1.0, 'classifier__gamma': 'scale'}"
+2,0.9219047619047618,0.058619801937044476,"{'classifier__C': 10.0, 'classifier__gamma': 'scale'}"
+4,0.9019047619047619,0.06254975343939254,"{'classifier__C': 0.1, 'classifier__gamma': 1.0}"
+4,0.9019047619047619,0.06254975343939254,"{'classifier__C': 10.0, 'classifier__gamma': 0.1}"
+6,0.8923809523809524,0.049059175707388665,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
+7,0.8823809523809525,0.0915178135888398,"{'classifier__C': 10.0, 'classifier__gamma': 1.0}"
+8,0.862857142857143,0.07971889387602114,"{'classifier__C': 1.0, 'classifier__gamma': 0.1}"
+9,0.6585714285714286,0.14009714802362588,"{'classifier__C': 0.1, 'classifier__gamma': 0.1}"

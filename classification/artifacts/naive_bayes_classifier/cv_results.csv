@@ -1,0 +1,7 @@
+rank_test_score,mean_test_score,std_test_score,params
+1,0.8733333333333333,0.049793223227313554,{'classifier__var_smoothing': 1e-11}
+1,0.8733333333333333,0.049793223227313554,{'classifier__var_smoothing': 1e-09}
+1,0.8733333333333333,0.049793223227313554,{'classifier__var_smoothing': 1e-07}
+1,0.8733333333333333,0.049793223227313554,{'classifier__var_smoothing': 1e-05}
+1,0.8733333333333333,0.049793223227313554,{'classifier__var_smoothing': 0.001}
+6,0.7752380952380953,0.1220256097428182,{'classifier__var_smoothing': 0.1}

@@ -1,0 +1,9 @@
+rank_test_score,mean_test_score,std_test_score,params
+1,0.8533333333333333,0.0895136772381652,"{'classifier__C': 10.0, 'classifier__class_weight': 'balanced'}"
+2,0.8433333333333334,0.10714179893657319,"{'classifier__C': 0.1, 'classifier__class_weight': 'balanced'}"
+2,0.8433333333333334,0.10714179893657319,"{'classifier__C': 1.0, 'classifier__class_weight': 'balanced'}"
+4,0.8338095238095239,0.11174152227553333,"{'classifier__C': 0.01, 'classifier__class_weight': 'balanced'}"
+5,0.7261904761904762,0.154640978396887,"{'classifier__C': 10.0, 'classifier__class_weight': None}"
+6,0.7166666666666666,0.14758832245530154,"{'classifier__C': 1.0, 'classifier__class_weight': None}"
+7,0.6676190476190477,0.18599856142617802,"{'classifier__C': 0.1, 'classifier__class_weight': None}"
+8,0.41571428571428565,0.15519426784187315,"{'classifier__C': 0.01, 'classifier__class_weight': None}"

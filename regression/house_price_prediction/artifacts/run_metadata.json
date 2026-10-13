@@ -1,0 +1,60 @@
+{
+  "format_version": 1,
+  "created_at_utc": "2026-10-13T15:32:13.134343+00:00",
+  "config": {
+    "random_state": 42,
+    "ground_truth_fraction": 0.2,
+    "validation_fraction": 0.2,
+    "cv_folds": 5,
+    "models": null,
+    "tune": true,
+    "tune_top_n": 2,
+    "overfit_ratio": 1.5,
+    "underperformance_ratio": 1.25
+  },
+  "models": [
+    "DummyMedian",
+    "LinearRegression",
+    "Ridge",
+    "Lasso",
+    "ElasticNet",
+    "RandomForest",
+    "GradientBoostedTreesModel",
+    "HistogramGradientBoostedTreesModel",
+    "XGBoost",
+    "XGBoost (tuned)",
+    "GradientBoostedTreesModel (tuned)"
+  ],
+  "feature_signature": "7098f7516a7c5639862c4bbb501f71098379da85fb4f058c4658f86d5f63b479",
+  "comparison_metric": "rmse",
+  "fit_rows": 934,
+  "split_rows": {
+    "training": 934,
+    "validation": 234,
+    "ground_truth": 292
+  },
+  "tuning": [
+    {
+      "model": "XGBoost (tuned)",
+      "cv_rmse": 26120.82005947415,
+      "parameters": "{\"regressor__model__learning_rate\": 0.05, \"regressor__model__max_depth\": 3}"
+    },
+    {
+      "model": "GradientBoostedTreesModel (tuned)",
+      "cv_rmse": 25580.34527343179,
+      "parameters": "{\"regressor__model__learning_rate\": 0.05, \"regressor__model__max_depth\": 2}"
+    }
+  ],
+  "file_sha256": {
+    "house_prices_dataset/train/train.csv": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41",
+    "house_prices_dataset/train/training_data.csv": "3bf1736ced60787102d9220722c252844039e0e2c63f398019b77e5c69c3f3f3",
+    "house_prices_dataset/train/validation_data.csv": "6b9d2ffb1deb35de45b80782b8c68319748af9ef8205ffd6f1735155f0a9ec42",
+    "house_prices_dataset/ground_truth/ground_truth_features.csv": "7932b53b58483fff8ab8a1f0a1f76f811d5f3f0fc604b8ac813f82ae611b1d71",
+    "house_prices_dataset/ground_truth/ground_truth.csv": "0692e3f2a07ae3581672f9e4b612a55cda68c3635a837872373ade49c063841e",
+    "artifacts/model_comparison.csv": "240be50bb35e986bbb3f923e5314392e65a88cb88963e8a45081c38c87f61faa",
+    "artifacts/candidates.joblib": "b3f41aacdc1895cb6400e5eb6f47b67bcb5ee74be9c821136d57abe975fccaef"
+  },
+  "best_observed_models": [
+    "LinearRegression"
+  ]
+}

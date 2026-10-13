@@ -1,0 +1,33 @@
+{
+  "format_version": 1,
+  "created_at_utc": "2026-10-13T16:28:36.438060+00:00",
+  "source_sha256": "0ad86d64686c76aeb31e25e3a9f77a313140c312166bbd3ed1d6bc5282bf4bcd",
+  "cleaned_sha256": "0763ec57112e9d30e48a6f16380a2c29fdf1f4d8756944ce0614423c2332a6dc",
+  "features": [
+    "Age",
+    "EstimatedSalary"
+  ],
+  "target": "Purchased",
+  "audit": {
+    "source_rows": 400,
+    "invalid_label_rows_excluded": 0,
+    "all_predictors_missing_rows_excluded": 0,
+    "duplicate_labeled_rows_excluded": 33,
+    "cleaned_rows": 367,
+    "invalid_age_values_set_missing": 0,
+    "invalid_salary_values_set_missing": 0,
+    "non_numeric_or_nonfinite_values": {
+      "Age": 0,
+      "EstimatedSalary": 0,
+      "Purchased": 0
+    },
+    "remaining_missing_predictors": {
+      "Age": 0,
+      "EstimatedSalary": 0
+    },
+    "class_counts": {
+      "0": 229,
+      "1": 138
+    }
+  }
+}

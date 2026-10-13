@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="728" viewBox="0 0 1440 728" role="img" aria-labelledby="title description">
+  <title id="title">The tabular machine learning workflow</title>
+  <desc id="description">Configuration supports nine notebook stages: load and validate data, explore patterns, clean records, reserve evaluation data, engineer features, fit preprocessing within training folds, train and tune, evaluate held-out performance, and save reports and artifacts for human review.</desc>
+  <defs>
+    <style>
+      .panel { fill: #f3eff7; stroke: #9889a5; stroke-width: 1.7; }
+      .accent { fill: #e6f5fa; stroke: #6a9aaa; stroke-width: 1.7; }
+      .heading { font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; font-weight: bold; font-size: 24px; fill: #292735; }
+      .detail { font-family: Arial, sans-serif; font-size: 17px; fill: #565467; }
+      .step { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #71647f; letter-spacing: 1px; }
+      .ink { stroke: #353344; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+    <symbol id="sliders" viewBox="0 0 120 120">
+      <g class="ink">
+        <rect x="18" y="10" width="9" height="102" rx="4" fill="#32bdd0"/>
+        <rect x="55" y="10" width="9" height="102" rx="4" fill="#32bdd0"/>
+        <rect x="92" y="10" width="9" height="102" rx="4" fill="#32bdd0"/>
+        <rect x="9" y="64" width="27" height="12" rx="5" fill="#f57667"/>
+        <rect x="46" y="34" width="27" height="12" rx="5" fill="#f6cf63"/>
+        <rect x="83" y="76" width="27" height="12" rx="5" fill="#f57667"/>
+      </g>
+    </symbol>
+    <symbol id="database" viewBox="0 0 120 120">
+      <g class="ink">
+        <path d="M20 25v64c0 22 70 22 70 0V25" fill="#fffdf8"/>
+        <path d="M20 45c0 21 70 21 70 0M20 64c0 21 70 21 70 0M20 82c0 21 70 21 70 0" fill="none"/>
+        <ellipse cx="55" cy="25" rx="35" ry="14" fill="#36b9d5"/>
+        <path d="M76 64h22l12 12v31H76z" fill="#dbe5f5"/>
+        <path d="M98 64v13h12M83 87h18M83 95h13" fill="none"/>
+      </g>
+    </symbol>
+    <symbol id="exploration" viewBox="0 0 160 120">
+      <g class="ink">
+        <rect x="8" y="10" width="130" height="98" rx="8" fill="#fffdf8"/>
+        <path d="M9 29h129" fill="none"/>
+        <circle cx="21" cy="20" r="3" fill="#f57667"/><circle cx="32" cy="20" r="3" fill="#f6cf63"/><circle cx="43" cy="20" r="3" fill="#72cda8"/>
+        <path d="M25 42v49h95" fill="none"/>
+        <rect x="36" y="68" width="16" height="23" fill="#7cc7de"/>
+        <rect x="63" y="52" width="16" height="39" fill="#a49bd3"/>
+        <rect x="90" y="39" width="16" height="52" fill="#f6cf63"/>
+        <circle cx="121" cy="81" r="22" fill="#f3eff7" fill-opacity=".85"/>
+        <path d="M138 98l16 15" stroke-width="8" fill="none"/>
+        <path d="M109 85l9-10 9 6 8-12" fill="none"/>
+      </g>
+    </symbol>
+    <symbol id="cleaning" viewBox="0 0 120 120">
+      <g class="ink">
+        <rect x="17" y="11" width="70" height="97" rx="5" fill="#fffdf8"/>
+        <path d="M29 32h31M29 53h31M29 74h24M29 93h33" fill="none" stroke="#8d8d9f"/>
+        <rect x="68" y="25" width="11" height="11" rx="2" fill="#f57667"/>
+        <path d="M70 27l7 7m0-7-7 7" stroke-width="1.5"/>
+        <rect x="68" y="48" width="11" height="11" rx="2" fill="#72cda8"/>
+        <path d="M70 53l3 3 5-6" stroke-width="1.5" fill="none"/>
+        <path d="M77 89l21-46 11 5-21 46-11 8z" fill="#f6cf63"/>
+        <path d="M98 43l4-9 11 5-4 9" fill="#f57667"/>
+        <path d="M77 89l11 5-11 8z" fill="#35bed0"/>
+      </g>
+    </symbol>
+    <symbol id="splits" viewBox="0 0 160 120">
+      <g class="ink">
+        <rect x="13" y="17" width="132" height="24" rx="6" fill="#72cda8"/>
+        <rect x="13" y="51" width="94" height="24" rx="6" fill="#7cc7de"/>
+        <rect x="13" y="85" width="58" height="24" rx="6" fill="#f6cf63"/>
+        <path d="M30 25v8m18-8v8m18-8v8m18-8v8m18-8v8m18-8v8M30 59v8m18-8v8m18-8v8m18-8v8M30 93v8m18-8v8" stroke="#fffdf8"/>
+        <rect x="112" y="84" width="32" height="29" rx="5" fill="#dce2ed"/>
+        <path d="M118 84v-9a10 10 0 0 1 20 0v9" fill="none"/>
+        <circle cx="128" cy="96" r="3" fill="#353344"/><path d="M128 98v6"/>
+      </g>
+    </symbol>
+    <symbol id="features" viewBox="0 0 160 120">
+      <g class="ink">
+        <rect x="13" y="14" width="132" height="96" rx="5" fill="#fffdf8"/>
+        <path d="M13 14h132v23H13z" fill="#f6cf63"/>
+        <path d="M90 37h26v73H90z" fill="#7cc7de"/>
+        <path d="M39 37v73M65 37v73M90 37v73M116 37v73M13 61h132M13 86h132" fill="none"/>
+        <circle cx="25" cy="25" r="3" fill="#f57667"/><circle cx="35" cy="25" r="3" fill="#72cda8"/>
+        <path d="M101 12v12M95 18h12M127 3v10M122 8h10" stroke="#a18dcb" stroke-width="3"/>
+      </g>
+    </symbol>
+    <symbol id="preprocessing" viewBox="0 0 120 120">
+      <g class="ink">
+        <rect x="10" y="16" width="29" height="88" rx="6" fill="#fffdf8"/>
+        <path d="M17 33h14M17 48h14M17 63h14M17 78h14M17 93h14" fill="none" stroke="#a49bd3"/>
+        <path d="M46 60h29m-8-8 8 8-8 8" fill="none"/>
+        <rect x="83" y="16" width="27" height="88" rx="6" fill="#7cc7de"/>
+        <path d="M89 33h15M89 48h15M89 63h15M89 78h15M89 93h15" fill="none" stroke="#fffdf8"/>
+        <path d="M55 28l5-12 5 12-5 12z" fill="#f6cf63"/>
+        <path d="M55 91l5-12 5 12-5 12z" fill="#72cda8"/>
+      </g>
+    </symbol>
+    <symbol id="training" viewBox="0 0 120 120">
+      <g class="ink">
+        <rect x="25" y="25" width="70" height="70" rx="10" fill="#4e536b"/>
+        <rect x="38" y="38" width="44" height="44" rx="6" fill="#d3d8ed"/>
+        <path d="M37 15v10m16-10v10m16-10v10m16-10v10M37 95v10m16-10v10m16-10v10m16-10v10M15 37h10m-10 16h10m-10 16h10m-10 16h10M95 37h10m-10 16h10m-10 16h10m-10 16h10"/>
+        <path d="M49 67V55m11 12V47m11 20V58" stroke="#353344" stroke-width="5"/>
+        <circle cx="93" cy="90" r="18" fill="#f6cf63"/>
+        <path d="M84 90l6 6 12-14" fill="none" stroke-width="3"/>
+      </g>
+    </symbol>
+    <symbol id="evaluation" viewBox="0 0 160 120">
+      <g class="ink">
+        <rect x="13" y="10" width="128" height="102" rx="8" fill="#fffdf8"/>
+        <path d="M31 32v62h87M36 87l69-49" fill="none"/>
+        <g fill="#7cc7de"><circle cx="47" cy="80" r="5"/><circle cx="62" cy="68" r="5"/><circle cx="77" cy="72" r="5"/><circle cx="88" cy="51" r="5"/><circle cx="103" cy="46" r="5"/></g>
+        <circle cx="126" cy="92" r="22" fill="#72cda8"/>
+        <path d="M116 92l7 7 13-16" fill="none" stroke-width="4"/>
+      </g>
+    </symbol>
+    <symbol id="reports" viewBox="0 0 160 120">
+      <g class="ink">
+        <rect x="13" y="10" width="128" height="87" rx="7" fill="#fffdf8"/>
+        <path d="M14 10h126v20H14z" fill="#f57667"/>
+        <circle cx="26" cy="20" r="3" fill="#fffdf8"/><circle cx="37" cy="20" r="3" fill="#f6cf63"/>
+        <rect x="60" y="17" width="64" height="6" rx="3" fill="#fffdf8" stroke="none"/>
+        <path d="M27 47h42M27 60h42M27 73h27" fill="none" stroke="#b0a8c3"/>
+        <path d="M85 77V58m15 19V45m15 32V63" stroke="#7cc7de" stroke-width="8"/>
+        <path d="M80 94h25l8 8h38v17H80z" fill="#f6cf63"/>
+      </g>
+    </symbol>
+  </defs>
+  <rect width="1440" height="728" rx="22" fill="#fffdfb"/>
+  <text x="24" y="43" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#292735">From raw data to reviewable results</text>
+  <text x="24" y="76" class="detail">A practical tabular ML workflow — follow the numbered stages.</text>
+
+  <rect class="panel" x="24" y="108" width="192" height="566" rx="22"/>
+  <text x="120" y="154" class="heading" text-anchor="middle" font-size="22">Configuration</text>
+  <use href="#sliders" x="56" y="225" width="128" height="128"/>
+  <text x="120" y="412" class="detail" text-anchor="middle">Set the experiment</text>
+  <path d="M58 437h124" stroke="#d6cddb" stroke-width="1.5"/>
+  <g class="detail" text-anchor="middle">
+    <text x="120" y="476">Random seeds</text>
+    <text x="120" y="511">Model families</text>
+    <text x="120" y="546">CV and tuning</text>
+    <text x="120" y="581">Scoring metrics</text>
+    <text x="120" y="644" font-size="14" fill="#81778b">Editable notebook settings</text>
+  </g>
+
+  <rect class="panel" x="232" y="108" width="218" height="276" rx="22"/>
+  <text x="250" y="133" class="step">01</text>
+  <text x="341" y="161" class="heading" text-anchor="middle">Data loading</text>
+  <use href="#database" x="291" y="185" width="100" height="100"/>
+  <g class="detail" text-anchor="middle"><text x="341" y="315">Read source CSVs</text><text x="341" y="342">Check types, targets</text><text x="341" y="365">and stable row IDs</text></g>
+
+  <rect class="panel" x="466" y="108" width="302" height="276" rx="22"/>
+  <text x="484" y="133" class="step">02</text>
+  <text x="617" y="161" class="heading" text-anchor="middle">Data exploration</text>
+  <use href="#exploration" x="547" y="184" width="140" height="105"/>
+  <g class="detail" text-anchor="middle"><text x="617" y="315">Inspect distributions and missingness</text><text x="617" y="342">Explore relationships</text><text x="617" y="365">and target imbalance</text></g>
+
+  <rect class="panel" x="784" y="108" width="302" height="172" rx="22"/>
+  <text x="802" y="133" class="step">03</text>
+  <text x="803" y="165" class="heading">Data cleaning</text>
+  <use href="#cleaning" x="985" y="134" width="88" height="88"/>
+  <g class="detail"><text x="803" y="204">Resolve duplicates</text><text x="803" y="228">and invalid values</text><text x="803" y="258">Apply domain rules</text></g>
+
+  <rect class="panel" x="232" y="400" width="218" height="274" rx="22"/>
+  <text x="250" y="425" class="step">04</text>
+  <text x="341" y="454" class="heading" text-anchor="middle">Data splits</text>
+  <use href="#splits" x="274" y="476" width="134" height="100"/>
+  <g class="detail" text-anchor="middle"><text x="341" y="604">Seeded train / validation</text><text x="341" y="628">and held-out partitions</text><text x="341" y="655">Keep test rows out of tuning</text></g>
+
+  <rect class="panel" x="466" y="400" width="302" height="274" rx="22"/>
+  <text x="484" y="425" class="step">05</text>
+  <text x="617" y="454" class="heading" text-anchor="middle">Feature engineering</text>
+  <use href="#features" x="547" y="476" width="140" height="105"/>
+  <g class="detail" text-anchor="middle"><text x="617" y="604">Build domain and ordinal features</text><text x="617" y="628">Define transformations</text><text x="617" y="655">and useful feature combinations</text></g>
+
+  <rect class="accent" x="784" y="296" width="302" height="180" rx="22"/>
+  <text x="802" y="321" class="step">06</text>
+  <text x="803" y="354" class="heading">Preprocessing</text>
+  <use href="#preprocessing" x="985" y="330" width="88" height="88"/>
+  <g class="detail"><text x="803" y="394">Impute, encode, scale</text><text x="803" y="422">Fit learned transforms</text><text x="803" y="450">inside training CV folds</text></g>
+
+  <rect class="accent" x="784" y="492" width="302" height="182" rx="22"/>
+  <text x="802" y="517" class="step">07</text>
+  <text x="803" y="550" class="heading">Train and tune</text>
+  <use href="#training" x="989" y="530" width="84" height="84"/>
+  <g class="detail"><text x="803" y="590">Fit selected models</text><text x="803" y="618">Cross-validate and search</text><text x="803" y="646">model hyperparameters</text></g>
+
+  <rect class="panel" x="1102" y="108" width="314" height="276" rx="22"/>
+  <text x="1120" y="133" class="step">08</text>
+  <text x="1259" y="161" class="heading" text-anchor="middle">Model evaluation</text>
+  <use href="#evaluation" x="1189" y="185" width="140" height="105"/>
+  <g class="detail" text-anchor="middle"><text x="1259" y="315">Score held-out performance</text><text x="1259" y="342">Inspect errors, overfitting</text><text x="1259" y="365">and metric trade-offs</text></g>
+
+  <rect class="panel" x="1102" y="400" width="314" height="274" rx="22"/>
+  <text x="1120" y="425" class="step">09</text>
+  <text x="1259" y="454" class="heading" text-anchor="middle">Reports and review</text>
+  <use href="#reports" x="1189" y="476" width="140" height="105"/>
+  <g class="detail" text-anchor="middle"><text x="1259" y="604">Save models, settings and predictions</text><text x="1259" y="628">Build HTML reports</text><text x="1259" y="655">Record findings for human review</text></g>
+
+  <text x="720" y="708" class="detail" text-anchor="middle" font-size="15">Learned transformations stay within training folds. Held-out data supports final evaluation.</text>
+</svg>

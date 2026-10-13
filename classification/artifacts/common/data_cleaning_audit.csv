@@ -1,0 +1,8 @@
+,value
+source_rows,400
+invalid_label_rows_excluded,0
+all_predictors_missing_rows_excluded,0
+duplicate_labeled_rows_excluded,33
+cleaned_rows,367
+invalid_age_values_set_missing,0
+invalid_salary_values_set_missing,0
