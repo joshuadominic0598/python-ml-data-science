@@ -1,4 +1,4 @@
-# Car-price regression with five manual notebooks
+# Car-price regression
 
 Five notebooks cover exploration, cleaning, feature engineering, training and held-out evaluation. Run them in Jupyter or VS Code. Settings and model code are included in the notebooks.
 

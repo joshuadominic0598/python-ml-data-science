@@ -1,4 +1,4 @@
-# House-price regression with five manual notebooks
+# House-price regression
 
 Open the notebooks in Jupyter or VS Code and run their cells manually. Code and editable run settings are included in the notebooks.
 
