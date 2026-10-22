@@ -1,6 +1,6 @@
 # Car-price regression with five manual notebooks
 
-This project follows the house-price notebook structure: five standalone notebooks, saved training artifacts, and interactive HTML reports. Run the cells manually in Jupyter or VS Code. All project code lives in the notebooks; there is no runner or external configuration file.
+Five notebooks cover exploration, cleaning, feature engineering, training and held-out evaluation. Run them in Jupyter or VS Code. Settings and model code are included in the notebooks.
 
 From the repository root:
 
@@ -22,7 +22,7 @@ Choose a Python kernel with the project dependencies, or the repository's `.venv
 
 Run all five in order for the full analysis. For training/testing alone, **Run All in 04, then Run All in 05**. Training includes its own cleaning and feature definitions, so 01–03 are optional. Testing works in a fresh kernel and loads the latest saved candidates and settings.
 
-The original notebook's reasoning is integrated into the relevant stages, with editable conclusion placeholders. Its broken dataset path, model-specific R² reuse and percentage-error denominator are corrected. All headline metrics are computed from each model's own predictions in price units.
+The observations describe the saved run. Each model is scored from its own predictions in price units, with percentage errors and price-band summaries for context.
 
 ## Choose models and settings
 
@@ -44,8 +44,8 @@ The source CSV is preserved under `car_prices_dataset/train/car_price.csv`.
 - Exclude missing, nonfinite or nonpositive prices from supervised analysis. Predictors with missing values remain usable.
 - Keep the first occurrence of each exact labeled source record before splitting, so identical records cannot appear in different splits.
 - Retain valid price/mileage extremes and older cars. No global percentile trimming is applied.
-- Omit the high-cardinality `Model` predictor, matching the original baseline; preserve it in error tables for inspection.
-- Mark engine volumes outside `(0, 6.5]` as unknown under the original dataset-specific rule. Also mark invalid mileage/year measurements as unknown, then impute inside each CV fold.
+- Omit the high-cardinality `Model` predictor to limit the number of categories in the baseline; keep it in error tables for inspection.
+- Mark engine volumes outside `(0, 6.5]` as unknown under the dataset-specific validity rule. Also mark invalid mileage/year measurements as unknown, then impute inside each CV fold.
 - Use a fixed snapshot year of **2016**, the latest model year in this source, for age features. No sale dates or mileage-unit conversion are assumed.
 
 The current source has 4,345 rows. Excluding 172 missing prices and 50 exact duplicate labeled records leaves 4,123 usable rows. Default splits are **2,638 training, 660 validation and 825 ground truth**. Source data remains unchanged.
@@ -92,10 +92,10 @@ Reports embed Plotly and open offline. Successful training overwrites current tr
 
 ## Read the comparison
 
-Price-unit RMSE is the main metric. MAE, RMSLE, R², mean absolute percentage error and the percentage of predictions within 50% of actual price provide context. The 50% tolerance is a descriptive measure retained from the original analysis.
+Price-unit RMSE is the main metric. MAE, RMSLE, R², mean absolute percentage error and the percentage of predictions within 50% of actual price provide context. The 50% tolerance is a descriptive error threshold.
 
 - `overfitting_flag`: validation RMSE / training RMSE exceeds `overfit_ratio` (default 1.5).
 - `best_model_flag`: lowest ground-truth RMSE, including numerical ties.
 - `underperforming_flag`: ground-truth RMSE is at least `underperformance_ratio` times the best observed RMSE (default 1.25).
 
-The comparison report shows training, validation and testing RMSE/R² together. Testing also includes price-band scores and the largest relative errors, plus notebook analysis of cars below 50k. The best observed candidate is mentioned for inspection; the final choice is yours. Repeated tuning after inspecting ground truth reduces its independence.
+The comparison report shows training, validation and testing RMSE/R² together. Testing also includes price-band scores and the largest relative errors, plus notebook analysis of cars below 50k. The lowest held-out RMSE is highlighted alongside the other metrics. Repeated tuning after inspecting ground truth reduces its independence.

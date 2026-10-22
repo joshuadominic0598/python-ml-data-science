@@ -1,6 +1,6 @@
 # House-price regression with five manual notebooks
 
-Open the notebooks in Jupyter or VS Code and run their cells manually. Each notebook contains its own code; there is no runner, external project module, or configuration file to execute.
+Open the notebooks in Jupyter or VS Code and run their cells manually. Code and editable run settings are included in the notebooks.
 
 From the repository root, activate your Python environment and install dependencies if needed:
 
@@ -79,4 +79,4 @@ Dollar RMSE is the main comparison measure. MAE, RMSLE and R² provide context. 
 - **Underperforming:** ground-truth RMSE is at least `underperformance_ratio` times the best observed RMSE (default 1.25).
 - **Comparison report:** grouped training, validation and testing RMSE and R², with every candidate's metrics and flags.
 
-The reports compare the chosen candidates and leave the final decision to you. Repeated tuning after inspecting ground truth reduces its independence. No global outlier deletion or automatic winner refit is applied.
+The reports compare the selected candidates across error measures and flag generalization gaps. Repeated tuning after inspecting ground truth reduces its independence. No global outlier deletion or automatic winner refit is applied.

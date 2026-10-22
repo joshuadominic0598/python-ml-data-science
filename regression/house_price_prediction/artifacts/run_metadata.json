@@ -25,7 +25,7 @@
     "XGBoost (tuned)",
     "GradientBoostedTreesModel (tuned)"
   ],
-  "feature_signature": "7098f7516a7c5639862c4bbb501f71098379da85fb4f058c4658f86d5f63b479",
+  "feature_signature": "6199b07b3434c0ffa362c8c377d9952fe0a70ba644dffee63f340f7dee71910f",
   "comparison_metric": "rmse",
   "fit_rows": 934,
   "split_rows": {

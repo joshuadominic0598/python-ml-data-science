@@ -12,7 +12,7 @@ pydotplus==2.0.2
 graphviz==0.21
 plotly==7.1.0
 joblib==1.6.0
-pulp==3.3.2  # capped below 4.0: that's a breaking rewrite dropping the classic LpVariable/makeDict API used here
+pulp==3.3.2  # Uses the LpVariable and makeDict APIs in the optimization notebook.
 nbformat==5.11.1
 nbclient==0.11.0
 gdown==5.2.0  # used by the Makefile to fetch datasets from Google Drive

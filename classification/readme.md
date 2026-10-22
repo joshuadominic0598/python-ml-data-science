@@ -1,6 +1,6 @@
 # Customer-purchase classification: shared preparation, individual models
 
-This folder has two common preparation notebooks and seven independent classifier notebooks. Run them manually in Jupyter or VS Code. Every classifier produces its own fitted-model artifacts and one offline HTML report. There is no runner, aggregate model comparison or model ranking.
+This folder has two common preparation notebooks and seven independent classifier notebooks. Run them manually in Jupyter or VS Code. Every classifier produces its own fitted-model artifacts and one offline HTML report. Each classifier can be run independently after cleaning.
 
 From the repository root:
 
@@ -61,11 +61,11 @@ Change the estimator or `PARAM_GRID` in that notebook to adjust its hyperparamet
 Each model uses a stratified train/test split. All learned imputation, scaling and feature expansion are fitted inside the training CV folds. Tuning selects parameters within that classifier family and refits on training rows only; it never uses the test set for parameter search or early stopping. Reruns overwrite only that classifier's artifact folder and report.
 
 ## Reports on model training and testing
-Reports embed Plotly for offline viewing. Each contains the model explanation, actual fitted hyperparameters, CV results, train/test metrics, per-class scores, misclassified customers, confusion matrix, ROC/precision–recall curves and an age/salary decision-region plot. A bounded 120×120 grid replaces the original extremely large decision-boundary mesh. Decision Tree also displays its learned rules in its notebook without requiring Graphviz.
+Reports embed Plotly for offline viewing. Each contains the model explanation, actual fitted hyperparameters, CV results, train/test metrics, per-class scores, misclassified customers, confusion matrix, ROC/precision–recall curves and an age/salary decision-region plot. A 120×120 grid keeps the decision-region plot manageable. Decision Tree also displays its learned rules in its notebook without requiring Graphviz.
 
 ## Read one model's performance
 
-The original concern about missed purchasers is preserved: **recall** measures the share of purchasers captured. **Precision** measures how many predicted purchasers actually purchased, and **F1** summarizes their balance. Accuracy and balanced accuracy provide additional context. False negatives and false positives are explicitly identified by source RowId.
+**Recall** measures the share of purchasers identified. **Precision** measures how many predicted purchasers actually purchased, and **F1** summarizes their balance. Accuracy and balanced accuracy provide additional context. False negatives and false positives are explicitly identified by source RowId.
 
 ROC AUC and average precision use continuous purchase probabilities, or SVC decision margins, rather than hard class labels. SVC margins are not probabilities, so its report omits probability log loss. Other classifiers report probability log loss alongside the classification metrics.
 

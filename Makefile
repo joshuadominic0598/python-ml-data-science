@@ -18,7 +18,7 @@ CAR_PRICES_DATASET_URL := https://drive.google.com/drive/folders/1TCjBTu47g1htMy
 NYC_311_CSV_URL := https://drive.google.com/file/d/1NBhCray_O3H4id3CIkbZw8zfnkS9T_8M/view
 MALL_CUSTOMERS_CSV_URL := https://drive.google.com/file/d/1gWsErcY9I4OH_nntV1Rm1hjWsJIj6ro5/view
 
-# Every file expected on disk once all datasets have downloaded successfully.
+# Files checked after dataset download.
 EXPECTED_FILES := \
 	$(HOUSING_DATASET_DIR)/housing.csv \
 	$(HOUSE_PRICES_DATASET_DIR)/data_description.txt \
@@ -64,8 +64,7 @@ data: install
 	$(GDOWN) --fuzzy -O $(MALL_CUSTOMERS_CSV) $(MALL_CUSTOMERS_CSV_URL)
 	$(MAKE) verify-data
 
-# Fails the build if any expected dataset file is missing, so a broken/partial
-# Google Drive download never passes silently.
+# Check that the download includes every expected file.
 verify-data:
 	@missing=0; \
 	for f in $(EXPECTED_FILES); do \
